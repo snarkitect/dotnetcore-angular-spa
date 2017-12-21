@@ -10,6 +10,7 @@ namespace TodoApi.Models
         }
 
         public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<Lead> Leads { get; set; }
 
     }
 }

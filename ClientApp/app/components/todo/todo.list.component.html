@@ -1,0 +1,26 @@
+<section>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-10 table-responsive">
+            <h1>TodoList</h1>
+            <a [routerLink]="['/todo/', 0]"><button>New</button></a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Todo ID</td>
+                        <td>Name</td>
+                        <td>Complete</td>
+                        <td> </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let todo of todoItems">
+                        <td>{{ todo.id }}</td>
+                        <td>{{ todo.name }}</td>
+                        <td>{{ todo.isComplete }}</td>
+                        <td><a [routerLink]="['/todo/', todo.id]"><button>Edit</button></a> | <button (click)="delete(todo)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

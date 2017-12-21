@@ -83,6 +83,7 @@ namespace TodoApi.Controllers
                 return NotFound();
             }
 
+            //Depending on what we're trying to do, we may want to move this to the model and perform a "soft delete" using a column like deletedAt that's null until the item is deleted.
             _context.TodoItems.Remove(todo);
             _context.SaveChanges();
             return new NoContentResult();
